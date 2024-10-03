@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Allison Dzubak">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Allison Dzubak</title>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="static/favicon.jpg">
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Allison Dzubak</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#capstone">Machine Learning</a>
+                    <a class="nav-link" href="#publications">Publications</a>
+                    <a class="nav-link" href="static/Dzubak_Resume.pdf" target="_blank">Resume</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section id="title">
+        <div class="container-fluid">
+            <div class="row">
+                <img class="img-fluid" src="static/cover.png" alt="data-mind home page welcome image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Word Cloud -->
+    <section id="word-cloud">
+        <div class="container-fluid pt-5">
+            <div class="row">
+                <div class="col-12 p-3 text-center">
+                    <img class="img-fluid mx-auto" src="static/word_cloud_240407.png" alt="word-cloud of machine learning techniques">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MIT ADSP Capstone -->
+    <section id="capstone">
+        <div class="container-fluid pt-5">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-start">
+                    <h1 class="text-start">
+                        Recognize Emotions from Facial Images with Convolutional Neural Networks
+                        <a href="https://github.com/allison-dzubak/facial-emotion-detection-cnn" class="btn btn-outline-secondary" role="button" target="_blank">github</a>
+                    </h1>
+                </div>
+
+            <!-- Carousel -->
+            <div class="row fixed-height-row">
+                <div id="capstone-carousel" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+
+                        <!-- Project goal slide -->
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/capstone-cover.jpg" alt="facial emotion recognition image">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Project Goal</h2>
+                                            <ul class="fs-4">Recognize emotions from static facial images</ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Available data slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/capstone-data.png" alt="examples of the provided facial image data with their associated emotion labels">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Available Dataset</h2>
+                                            <ul class="fs-4">20K facial images sorted into 4 emotion classes: happy, sad, surprise, neutral</ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data challenges slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/capstone-data-challenges.png" alt="example images of some challenging cases we would like the model to be able to handle">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Dataset Challenges</h2>
+                                        <ul class="fs-4"> Illumination, camera viewpoint, watermarks, occlusions, misalignment </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data issues slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/capstone-data-issues.png" alt="example images of some issues with the dataset that need to be addressed">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Dataset Issues</h2>
+                                        <ul class="fs-4"> Mislabeled images, images without faces, duplicate images with conflicting labels </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data cleaning slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/capstone-face-detection.png" alt="example of facial detection model to exclude non-faces from the dataset">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Data Cleaning</h2>
+                                        <ul class="fs-4"> Facial detection model to exclude images without faces </ul>
+                                        <ul class="fs-4"> Image hashing to exclude duplicate images </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Model description slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-12 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/capstone-data-augmentations.png" alt="tables showing varying levels of data augmentation employed">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Model accuracies slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-12 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/capstone-model-accuracies.png" alt="bar graph showing model training and validation accuracies for 3 pre-trained model architectures with varying model parameters">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Class performance slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-12 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/capstone-class-performance.png" alt="bar graph showing emotion class F1 scores for highest accuracy models">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Test performance slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/capstone-test-misclassified.png" alt="image showing Sad and Neutral misclassifications on test dataset">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Unseen Test Data Performance</h2>
+                                        <ul class="fs-5"> One box is labeled 'Sad' but misclassified as 'Neutral'. The other is labeled 'Neutral' but misclassified as 'Sad'. Can you identify which is which?</ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Arrows -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#capstone-carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#capstone-carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MIT ADSP Hackathon -->
+    <section id="hackathon">
+        <div class="container-fluid pt-5">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-start">
+                    <h1 class="text-start">
+                        Predict Passenger Satisfaction with Random Forest and XGBoost
+                        <a href="https://github.com/allison-dzubak/customer-satisfaction-ensemble" class="btn btn-outline-secondary" role="button" target="_blank">github</a>
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Carousel -->
+            <div class="row fixed-height-row">
+                <div id="hackathon-carousel" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+
+                        <!-- Project goal slide -->
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/hackathon-cover.jpg" alt="image of the shinkansen train">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Project Goal</h2>
+                                        <ul class="fs-4"> Predict passenger satisfaction with their experience traveling on the Shinkansen Bullet Train </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Model summary slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-12 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/hackathon-features.png" alt="image showing various feature set manipulations and null value imputation options used with model testing">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Leaderboard slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/hackathon-leaderboard.png" alt="screenshot of final leaderboard with hackathon scores">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Hackathon Leaderboard</h2>
+                                        <ul class="fs-4"> XGBoost Model with 95.58% accuracy achieved 6th place out of 57 teams</ul>
+                                        <ul class="fs-4"> The 1st place model acheived accuracy of 95.82%</ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Queries slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/hackathon-queries.png" alt="plots of interesting feature relationships and misclassification patterns">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Follow-Up Queries</h2>
+                                        <ul class="fs-4"> 95.58% accuracy may be improved by addressing feature anomalies </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Navigation Arrows -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#hackathon-carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#hackathon-carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Socio-economic Clustering  -->
+    <section id="clustering">
+        <div class="container-fluid pt-5">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-start">
+                    <h1 class="text-start">
+                        Use Socio-Economic Factors for Geographic Clustering
+                        <a href="https://github.com/allison-dzubak/socio-economic-geo-clustering" class="btn btn-outline-secondary" role="button" target="_blank">github</a>
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Carousel -->
+            <div class="row fixed-height-row">
+                <div id="clustering-carousel" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+
+                        <!-- Cluster Labels Slide-->
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <iframe src="static/clustering-plot.html" class="w-100" height="500" frameborder="0" style="margin-top: -100px" scrolling="no" alt="interactive 3D plot of select cluster features and labels"></iframe>
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Project Goal</h2>
+                                        <ul class="fs-4"> Determine distinct geographic clusters from socio-economic factors</ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Clustering Comparison Slide-->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/clustering-dendrogram.png" alt="dendrogram for hierarchical clustering">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Clustering Methods</h2>
+                                        <ul class="fs-4">K-means, K-medoids, Gaussian mixture models, and hierarchical clustering approaches suggest 2 main distinct geographic clusters</ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Arrows -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#clustering-carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#clustering-carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- House Prices Linear Regression -->
+    <section id="house-prices">
+        <div class="container-fluid pt-5">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-start">
+                    <h1 class="text-start">
+                        Predict House Prices with Linear Regression
+                        <a href="https://github.com/allison-dzubak/house-prices-linear-regression" class="btn btn-outline-secondary" role="button" target="_blank">github</a>
+                    </h1>
+                </div>
+            </div>
+
+
+            <!-- Carousel -->
+            <div class="row fixed-height-row">
+                <div id="ml-carousel" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+
+                        <!-- Model takeaways slide -->
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/house-prices-model-comparison.png" alt="comparison of the performance of three linear regression models">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Model Insights</h2>
+                                        <ul class="fs-4">The factors that result in the largest increase in home value are square footage of above ground living area and select quality ratings (overall, exterior material, kitchen) </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Legitimate outliers slide -->
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <div class="row align-items-md-center">
+                                <div class="col-md-6 order-md-2">
+                                    <img class="img-fluid d-block w-100" src="static/house-prices-outliers.png" alt="scatter plots of target versus select features highlighting outliers">
+                                </div>
+                                <div class="col-md-6 order-md-1">
+                                    <div class="carousel-text-container px-3">
+                                        <h2 class="mb-3">Legitimate Outliers</h2>
+                                        <ul class="fs-4">There are legitimate outliers in the dataset that are biasing the models toward under-predicting sale prices</ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Arrows -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#ml-carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#ml-carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+        <div class="container-fluid pt-5">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-start">
+                    <h1 class="text-start">Publications</h1>
+                </div>
+                <div id="pub-accordion" class="accordion">
+
+                    <!-- Nature Chem -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Nature Chemistry
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#pub-accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Ab initio carbon capture in open-site metal-organic frameworks. A. L. Dzubak, L. -C. Lin, J. Kim, J. A. Swisher, R. Poloni, S. N. Maximoff, B. Smit, and L. Gagliardi. <a href="https://www.nature.com/articles/nchem.1432" target="_blank">Nature Chem. 4, 810 (2012)</a></li>
+                                    <li>Oxidation of ethane to ethanol by N<sub>2</sub>O in a metal-organic framework with coordinatively unsaturated iron(II) sites. D. J. Xiao, E. D. Bloch, J. A. Mason, W. L. Queen, M. R. Hudson, N. Planas, J. Borycz, A. L. Dzubak, P. Verma, K. Lee, F. Bonino, V. Crocella, J. Yano, S. Bordiga, D. G. Truhlar, L. Gagliardi, C. M. Brown, and J. R. Long. <a href="https://www.nature.com/articles/nchem.1956" target="_blank">Nature Chem. 6, 590 (2014)</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Journal of Chemical Physics -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                The Journal of Chemical Physics
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#pub-accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Quantitative estimation of localization errors of 3d transition metal pseudopotentials in diffusion Monte Carlo. A. L. Dzubak, J. T. Krogel, and F. A. Reboredo. <a href="https://pubs.aip.org/aip/jcp/article/147/2/024102/988618/" target="_blank">J. Chem. Phys. 147, 024102 (2017)</a></li>
+                                    <li>MnNiO<sub>3</sub> revisited with modern theoretical and experimental methods. A. L. Dzubak, C. Mitra, M. Chance, S. Kuhn, G. E. Jellison Jr., A. S. Sefat, J. T. Krogel, and F. A. Reboredo. <a href="https://pubs.aip.org/aip/jcp/article/147/17/174703/195005/" target="_blank">J. Chem. Phys. 147, 174703 (2017)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Physical Review Materials -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Physical Review Materials
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#pub-accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>CrI<sub>3</sub> revisited with a many-body ab initio theoretical approach. T. Ichibha, A. L. Dzubak, J. T. Krogel, V. R. Cooper, and F. A. Reboredo. <a href="https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.5.064006" target="_blank">Phys. Rev. Mat. 5, 064006 (2021)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nature -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Nature
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#pub-accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Cooperative insertion of CO<sub>2</sub> in diamine-appended metal-organic frameworks. T. M. McDonald, J. A. Mason, X. Kong, E. D. Bloch, D. Gygi, A. Dani, V. Crocella, F. Giordanino, S. O. Odoh, W. S. Drisdell, B. Vlaisavljevich, A. L. Dzubak, R. Poloni, S. K. Schnell, N. Planas, K. Lee, T. Pascal, L. F. Wan, D. Prendergast, J. B. Neaton, B. Smit, J. B. Kortright, L. Gagliardi, S. Bordiga, J. A. Reimer, and J. R. Long. <a href="https://www.nature.com/articles/nature14327" target="_blank">Nature 519, 303 (2015)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Journal of the American Chemical Society -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Journal of the American Chemical Society
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#pub-accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>The mechanism of carbon dioxide adsorption in an alkylamine-functionalized metal-organic framework. N. Planas, A. L. Dzubak, R. Poloni, L. -C. Lin, A. McManus, T. M. McDonald, J. B. Neaton, J. R. Long, B. Smit, and L. Gagliardi. <a href="https://pubs.acs.org/doi/10.1021/ja4004766" target="_blank">J. Am. Chem. Soc. 135, 7402 (2013)</a></li>
+                                    <li>Design of a metal-organic framework with enhanced back bonding for the separation of N<sub>2</sub> and CH<sub>4</sub>. K. Lee, W. C. Isley III, A. L. Dzubak, P. Verma, S. J. Stoneburner, L. -C. Lin, J. D. Howe, E. D. Bloch, D. A. Reed, M. R. Hudson, C. M. Brown, J. R. Long, J. B. Neaton, B. Smit, C. J. Cramer, D. G. Truhlar, and L. Gagliardi. <a href="https://pubs.acs.org/doi/10.1021/ja4102979" target="_blank">J. Am. Chem. Soc. 136, 698 (2014)</a></li>
+                                    <li>Reversible CO binding enables tunable CO/H<sub>2</sub> and CO/N<sub>2</sub> separations in metal-organic frameworks with exposed divalent metal cations. E. D. Bloch, M. R. Hudson, J. A. Mason, S. Chavan, V. Crocella, J. D. Howe, K. Lee, A. L. Dzubak, W. L. Queen, J. M. Zadrozny, S. J. Geier, L. -C. Lin, L. Gagliardi, B. Smit, J. B. Neaton, S. Bordiga, C. M. Brown, and J. R. Long. <a href="https://pubs.acs.org/doi/abs/10.1021/ja505318p" target="_blank">J. Am. Chem. Soc. 136, 10752 (2014)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chemical Science -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Chemical Science
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#pub-accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>CO<sub>2</sub> induced phase transitions in diamine-appended metal-organic frameworks. B. Vlaisavljevich, S. O. Odoh, S. K. Schnell, A. L. Dzubak, K. Lee, N. Planas, J. B. Neaton, L. Gagliardi, and B. Smit. <a href="https://pubs.rsc.org/en/content/articlelanding/2015/sc/c5sc01828e" target="_blank">Chem. Sci. 6, 5177 (2015)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Journal of Physical Chemistry C -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                The Journal of Physical Chemistry C
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#pub-accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Uranyl-peroxide nanocapsules in aqueous solution: Force field development and first applications. P. Miro, B. Vlaisavljevich, A. L. Dzubak, S. Hu, P. C. Burns, C. J. Cramer, R. Spezia, and L. Gagliardi. <a href="https://pubs.acs.org/doi/10.1021/jp504147s" target="_blank">J. Phys. Chem. C 118, 24730 (2014)</a></li>
+                                    <li>CO<sub>2</sub> adsorption in Fe<sub>2</sub>(dobdc): A classical force field parameterized from quantum mechanical calculations. J. Borycz, L. -C. Lin, E. D. Bloch, J. Kim, A. L. Dzubak, R. Maurice, D. Semrouni, K. Lee, B. Smit, and L. Gagliardi. <a href="https://pubs.acs.org/doi/10.1021/jp500313j" target="_blank">J. Phys. Chem. C 118, 12230 (2014)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inorganic Chemistry  -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                Inorganic Chemistry
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#pub-accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>A combined spectroscopic and computational study of a high-spin S=7/2 diiron complex with a short iron-iron bond. C. M. Zall, D. Zherebetskyy, A. L. Dzubak, E. Bill, L. Gagliardi, and C. C. Lu. <a href="https://pubs.acs.org/doi/10.1021/ic202384b" target="_blank">Inorg. Chem. 51, 728 (2012)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chemistry: A European Journal  -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                Chemistry: A European Journal
+                            </button>
+                        </h2>
+                        <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#pub-accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Assessing metal-metal multiple bonds in Cr-Cr, Mo-Mo, and W-W compounds and a hypothetical U-U compound: A quantum chemical study comparing DFT and multireference methods. G. Li Manni, A. L. Dzubak, A. Mulla, D. W. Brogden, J. F. Berry, and L. Gagliardi. <a href="https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/chem.201103096" target="_blank">Chem. Eur. J. 18, 1737 (2012)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+
+<footer>
+    <p id="copyright">Copyright © 2024. Built by Allison.</p>
+</footer>
+
+<!-- JavaScript to update the copyright year -->
+<script>
+    document.getElementById("copyright").innerHTML = "Copyright © " + new Date().getFullYear() + ". Built by Allison.";
+</script>
