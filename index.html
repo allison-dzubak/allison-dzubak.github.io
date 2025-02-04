@@ -31,6 +31,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
+                    <a class="nav-link" href="#solar-energy-dashboard">Data Storytelling</a>
                     <a class="nav-link" href="#capstone">Machine Learning</a>
                     <a class="nav-link" href="#publications">Publications</a>
                     <a class="nav-link" href="static/Dzubak_Resume.pdf" target="_blank">Resume</a>
@@ -54,6 +55,51 @@
             <div class="row">
                 <div class="col-12 p-3 text-center">
                     <img class="img-fluid mx-auto" src="static/word_cloud_240407.png" alt="word-cloud of machine learning techniques">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solar Energy Dashboard -->
+    <section id="solar-energy-dashboard">
+        <div class="container-fluid pt-5">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-start">
+                    <h1 class="text-start">
+                        Gain Real-Time<sup><a href="#solaredge" style="text-decoration: none; font-size: 0.8em; color: gray;">*</a></sup> Insights on Household Energy Usage & Solar Generation
+                        <a href="https://github.com/allison-dzubak/solar-energy-dashboard" class="btn btn-outline-secondary" role="button" target="_blank">github</a>
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Production Chart -->
+            <div class="row">
+                <div class="col-12">
+                    <iframe
+                        id="production-chart"
+                        src=""
+                        width="100%" height="600" frameborder="0" title="Solar Energy Production Chart">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Consumption Chart -->
+            <div class="row">
+                <div class="col-12">
+                    <iframe
+                        id="consumption-chart"
+                        src=""
+                        width="100%" height="600" frameborder="0" title="Solar Energy Consumption Chart">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Solar Edge Monitoring System Acknowledgment -->
+            <div class="row">
+                <div class="col-12 d-flex justify-content-start">
+                <p id="solaredge" style="font-size: 0.9em; color: #555;">
+                    <strong>*</strong> Real-time data fetched every 15 minutes from the <a href="https://www.solaredge.com/us/" target="_blank" style="text-decoration: underline; color: #007bff;">Solar Edge API</a>.
+                </p>
                 </div>
             </div>
         </div>
@@ -603,6 +649,14 @@
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <!-- Dynamically add the timestamp to the solar energy iframe URL charts -->
+    <script>
+        const timestamp = new Date().getTime();
+        document.getElementById("production-chart").src = `http://allisondzubak.com/solar-energy-dashboard/Production.html?timestamp=${timestamp}`;
+        document.getElementById("consumption-chart").src = `http://allisondzubak.com/solar-energy-dashboard/Consumption.html?timestamp=${timestamp}`;
+    </script>
+
 </body>
 
 <footer>
