@@ -66,6 +66,22 @@ h1 {
   transform: translateY(-500%);
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Makes the whole card clickable */
+}
+
+.hover-shadow {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+
 @media (max-width: 768px) {
     /* For screens smaller than or equal to 768px (e.g., tablets and mobile devices) */
 
