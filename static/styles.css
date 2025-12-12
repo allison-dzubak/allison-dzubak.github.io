@@ -187,4 +187,22 @@ h1 {
     .carousel-control-next {
         right: 15px;
     }
+
+    #brewery-analytics h1 {
+      padding-left: 1rem;
+    }
+
+    #brewery-analytics p {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    #brewery-analytics .brewery-content {
+      padding-left: 1rem;
+    }
+
+    #brewery-carousel .carousel-item {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
 }
