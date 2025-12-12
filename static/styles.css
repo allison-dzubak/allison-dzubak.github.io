@@ -81,6 +81,71 @@ h1 {
   transform: translateY(-2px);
 }
 
+/* Brewery Analytics Skill Badges */
+.skill-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  margin: 4px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 0.85em;
+  font-weight: 500;
+  border: 1px solid #ddd;
+}
+
+.skill-badge:hover {
+  background-color: #e0e0e0;
+}
+
+.desktop-note {
+  font-size: 0.85em;
+  color: #777;
+  font-style: italic;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #4a7c59;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #3d6a4a;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Brewery Analytics Carousel - no scrollbars, auto height */
+#brewery-carousel {
+  overflow: hidden;
+}
+
+#brewery-carousel .carousel-item {
+  height: auto;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+#brewery-carousel .carousel-item img {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+
+#brewery-analytics p {
+  padding-left: 1rem;
+}
+
+#brewery-analytics .desktop-note {
+  padding-left: 0;
+  margin-bottom: 0;
+}
 
 @media (max-width: 768px) {
     /* For screens smaller than or equal to 768px (e.g., tablets and mobile devices) */
