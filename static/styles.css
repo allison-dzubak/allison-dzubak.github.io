@@ -1,202 +1,720 @@
+/* ============================================
+   Base & Typography
+   ============================================ */
+
+:root {
+    --green-primary: #4a7c59;
+    --green-dark: #3d6a4a;
+    --green-light: #e8f0eb;
+    --text-primary: #2c2c2c;
+    --text-secondary: #555;
+    --text-muted: #777;
+    --bg-white: #fafbf9;
+    --bg-light: #f2f4f0;
+    --border-light: #e0e0e0;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-  font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
+    color: var(--text-primary);
+    line-height: 1.7;
+    background-color: var(--bg-white);
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
-footer {
-  text-align: center;
-  padding-top: 20px;
+a {
+    color: var(--green-primary);
+    transition: color 0.2s ease;
 }
 
-h1 {
-  padding-left: 1rem;
+a:hover {
+    color: var(--green-dark);
 }
+
+
+/* ============================================
+   Navbar
+   ============================================ */
 
 .navbar {
-  padding-left: 20px;
-  padding-right: 20px;
-  }
-
-.fixed-height-row {
-  height: 450px;
-  overflow: auto;
-  }
-
-.carousel-item {
-  height: 450px;
-  padding-left: 100px; /* Increase left padding */
-  padding-right: 100px; /* Increase right padding */
-  }
-
-.carousel-item img {
-  height: 450px; /* Set the height of the image to match the carousel */
-  width: 100%; /* Ensure the image fills the width of its container */
-  object-fit: contain; /* Maintain aspect ratio while fitting the image within its container */
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0.75rem 0;
+    transition: box-shadow 0.3s ease;
 }
 
-.carousel-control-next,
-.carousel-control-prev {
-    filter: invert(100%);
+.navbar.scrolled {
+    box-shadow: var(--shadow-sm);
 }
 
-.carousel-control-prev {
-    left: -40px;
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-primary) !important;
+    letter-spacing: -0.01em;
 }
 
-.carousel-control-next {
-    right: -40px;
+.navbar .nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem !important;
+    position: relative;
+    transition: color 0.2s ease;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-size: 3rem 3rem;
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--green-primary) !important;
 }
 
-.iframe-container {
-  transform: translateY(-500%);
+.navbar .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background-color: var(--green-primary);
+    border-radius: 1px;
 }
 
-.card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block; /* Makes the whole card clickable */
+
+/* ============================================
+   Hero Section
+   ============================================ */
+
+#hero {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    background-color: var(--bg-white);
 }
 
-.hover-shadow {
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
 }
 
-.hover-shadow:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+.hero-photo {
+    flex-shrink: 0;
 }
 
-/* Brewery Analytics Skill Badges */
+.hero-photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;
+    border: 2px solid var(--green-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.hero-subtitle a {
+    color: var(--green-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero-subtitle a:hover {
+    text-decoration: underline;
+}
+
+.hero-intro {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+
+/* ============================================
+   Career Timeline
+   ============================================ */
+
+#timeline {
+    padding: 2rem 0 3rem;
+    background-color: var(--bg-white);
+}
+
+.timeline-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding: 0 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 12px;
+    left: calc(2rem + 12px);
+    right: calc(2rem + 12px);
+    height: 2px;
+    background-color: var(--border-light);
+    z-index: 0;
+}
+
+.timeline-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.timeline-node:hover {
+    transform: translateY(-2px);
+}
+
+.timeline-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--bg-white);
+    border: 3px solid var(--border-light);
+    transition: all 0.3s ease;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-node:hover .timeline-dot,
+.timeline-node.active .timeline-dot {
+    border-color: var(--green-primary);
+    background-color: var(--green-primary);
+    box-shadow: 0 0 0 4px var(--green-light);
+}
+
+.timeline-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.timeline-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.timeline-node:hover .timeline-title {
+    color: var(--green-primary);
+}
+
+.timeline-detail {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+}
+
+
+/* ============================================
+   Content Sections
+   ============================================ */
+
+.content-section {
+    padding: 4rem 0;
+}
+
+.content-section.section-alt {
+    background-color: var(--bg-light);
+}
+
+.section-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--green-primary);
+    display: inline-block;
+}
+
+.section-intro {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 800px;
+    margin-bottom: 2.5rem;
+}
+
+.subsection-heading {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+
+/* ============================================
+   Project Cards
+   ============================================ */
+
+.project-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.project-card-img {
+    overflow: hidden;
+    background-color: var(--bg-white);
+}
+
+.project-card-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-card-img img {
+    transform: scale(1.02);
+}
+
+.project-card-body {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.project-type {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--green-primary);
+    background-color: var(--green-light);
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--green-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.project-link:hover {
+    color: var(--green-dark);
+    text-decoration: underline;
+}
+
+/* Horizontal layout cards (image left, text right) */
+.project-card > .row .project-card-img {
+    height: 100%;
+}
+
+.project-card > .row .project-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Compact project cards (grid layout, presentations) */
+.project-card.compact {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card.compact .project-card-img {
+    overflow: hidden;
+}
+
+.project-card.compact .project-card-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.project-card.compact .project-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card.compact .project-links {
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+
+/* ============================================
+   Skill Badges
+   ============================================ */
+
+.skill-badges {
+    margin-bottom: 1rem;
+}
+
 .skill-badge {
-  display: inline-block;
-  padding: 6px 14px;
-  margin: 4px;
-  border-radius: 20px;
-  background-color: #f0f0f0;
-  color: #333;
-  font-size: 0.85em;
-  font-weight: 500;
-  border: 1px solid #ddd;
+    display: inline-block;
+    padding: 4px 12px;
+    margin: 3px;
+    border-radius: 16px;
+    background-color: var(--green-light);
+    color: var(--green-dark);
+    font-size: 0.78rem;
+    font-weight: 500;
+    border: 1px solid rgba(74, 124, 89, 0.15);
+    transition: background-color 0.2s ease;
 }
 
 .skill-badge:hover {
-  background-color: #e0e0e0;
+    background-color: rgba(74, 124, 89, 0.2);
 }
 
-.desktop-note {
-  font-size: 0.85em;
-  color: #777;
-  font-style: italic;
+
+/* ============================================
+   Services Summary
+   ============================================ */
+
+.services-summary {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-light);
 }
+
+.service-item {
+    padding: 1.25rem;
+    border-radius: 6px;
+    background-color: var(--bg-light);
+    height: 100%;
+}
+
+.service-item h5 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.service-item p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+
+/* ============================================
+   CTA Button
+   ============================================ */
 
 .cta-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #4a7c59;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+    padding: 10px 22px;
+    background-color: var(--green-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
-  background-color: #3d6a4a;
-  color: white;
-  transform: translateY(-2px);
+    background-color: var(--green-dark);
+    color: white;
+    transform: translateY(-2px);
 }
 
-/* Brewery Analytics Carousel - no scrollbars, auto height */
-#brewery-carousel {
-  overflow: hidden;
+
+/* ============================================
+   Publications Accordion
+   ============================================ */
+
+.accordion-item {
+    border-color: var(--border-light);
 }
 
-#brewery-carousel .carousel-item {
-  height: auto;
-  padding-left: 100px;
-  padding-right: 100px;
+.accordion-button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-primary);
 }
 
-#brewery-carousel .carousel-item img {
-  height: auto;
-  width: 100%;
-  object-fit: contain;
+.accordion-button:not(.collapsed) {
+    background-color: var(--green-light);
+    color: var(--green-dark);
+    box-shadow: none;
 }
 
-#brewery-analytics p {
-  padding-left: 1rem;
+.accordion-button:focus {
+    border-color: var(--green-primary);
+    box-shadow: 0 0 0 0.15rem rgba(74, 124, 89, 0.25);
 }
 
-#brewery-analytics .desktop-note {
-  padding-left: 0;
-  margin-bottom: 0;
+.accordion-body {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
 }
+
+.accordion-body ul {
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+}
+
+.accordion-body li {
+    margin-bottom: 0.75rem;
+}
+
+.accordion-body li:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-body a {
+    font-weight: 500;
+}
+
+
+.card-link .project-card .project-card-img {
+    background-color: var(--bg-white);
+}
+
+.card-link .project-card .project-card-body {
+    background-color: var(--bg-light);
+}
+
+
+/* ============================================
+   Desktop Note
+   ============================================ */
+
+.desktop-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.25rem;
+}
+
+
+/* ============================================
+   Card Link (for clickable presentation cards)
+   ============================================ */
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link:hover {
+    color: inherit;
+}
+
+
+/* ============================================
+   Footer
+   ============================================ */
+
+footer {
+    text-align: center;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--border-light);
+    background-color: var(--bg-white);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--green-primary);
+}
+
+#copyright {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+
+/* ============================================
+   Responsive
+   ============================================ */
 
 @media (max-width: 768px) {
-    /* For screens smaller than or equal to 768px (e.g., tablets and mobile devices) */
 
-    .carousel-inner .row {
+    #hero {
+        padding-top: 100px;
+        padding-bottom: 2rem;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .hero-photo img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-intro {
+        max-width: 100%;
+    }
+
+    /* Timeline goes vertical on mobile */
+    .timeline-track {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 1rem;
+        gap: 1.5rem;
+    }
+
+    .timeline-line {
+        top: 12px;
+        bottom: 12px;
+        left: calc(1rem + 11px);
+        right: auto;
+        width: 2px;
+        height: auto;
+    }
+
+    .timeline-node {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .timeline-dot {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .timeline-label {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    /* Sections */
+    .content-section {
+        padding: 3rem 0;
+    }
+
+    .section-heading {
+        font-size: 1.35rem;
+    }
+
+    /* Project cards */
+    .project-card .row {
         flex-direction: column;
     }
 
-    .carousel-inner .row .col-md-6 {
-        width: 100%;
-        margin-bottom: 20px;
+    .project-title {
+        font-size: 1.05rem;
     }
 
-    .fixed-height-row {
-        height: auto;
-        overflow: visible;
+    .project-type {
+        display: block;
+        margin-left: 0;
+        margin-top: 0.35rem;
+        width: fit-content;
     }
 
-    /* Remove padding and adjust height for smaller screens */
-    .carousel-item {
-        height: auto;
-        padding-left: 10px; /* Reduce left padding */
-        padding-right: 10px; /* Reduce right padding */
-        padding-top: 0px; /* Remove top padding */
-        padding-bottom: 0px; /* Remove bottom padding */
+    /* Services */
+    .service-item {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-photo img {
+        width: 130px;
+        height: 130px;
     }
 
-    /* Ensure the image scales properly */
-    .carousel-item img {
-        height: auto; /* Let the image adjust its height naturally */
-        width: 100%; /* Maintain full width */
-        object-fit: cover; /* Ensure the image fills its container without vertical padding */
+    .hero-text h1 {
+        font-size: 1.4rem;
     }
 
-    .carousel-control-prev {
-        left: 15px;
-    }
-
-    .carousel-control-next {
-        right: 15px;
-    }
-
-    #brewery-analytics h1 {
-      padding-left: 1rem;
-    }
-
-    #brewery-analytics p {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    #brewery-analytics .brewery-content {
-      padding-left: 1rem;
-    }
-
-    #brewery-carousel .carousel-item {
-      padding-left: 10px;
-      padding-right: 10px;
+    .project-card-body {
+        padding: 1rem;
     }
 }
