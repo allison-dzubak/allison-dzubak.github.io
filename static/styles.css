@@ -118,7 +118,7 @@ a:hover {
     border-radius: 50%;
     object-fit: cover;
     object-position: center 20%;
-    border: 2px solid var(--green-primary);
+    border: 3px solid var(--green-light);
     box-shadow: var(--shadow-md);
 }
 
@@ -315,6 +315,17 @@ a:hover {
     transform: scale(1.02);
 }
 
+/* Horizontal layout cards (image left, text right) */
+.project-card > .row .project-card-img {
+    height: 100%;
+}
+
+.project-card > .row .project-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .project-card-body {
     padding: 1.5rem;
 }
@@ -367,17 +378,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Horizontal layout cards (image left, text right) */
-.project-card > .row .project-card-img {
-    height: 100%;
-}
-
-.project-card > .row .project-card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* Compact project cards (grid layout, presentations) */
 .project-card.compact {
     height: 100%;
@@ -404,6 +404,19 @@ a:hover {
 .project-card.compact .project-links {
     margin-top: auto;
     padding-top: 0.5rem;
+}
+
+
+/* ============================================
+   Technical Storytelling Cards (Research section)
+   ============================================ */
+
+.card-link .project-card .project-card-img {
+    background-color: var(--bg-white);
+}
+
+.card-link .project-card .project-card-body {
+    background-color: var(--bg-light);
 }
 
 
@@ -538,15 +551,6 @@ a:hover {
 }
 
 
-.card-link .project-card .project-card-img {
-    background-color: var(--bg-white);
-}
-
-.card-link .project-card .project-card-body {
-    background-color: var(--bg-light);
-}
-
-
 /* ============================================
    Desktop Note
    ============================================ */
@@ -555,7 +559,7 @@ a:hover {
     font-size: 0.8rem;
     color: var(--text-muted);
     font-style: italic;
-    margin-top: 0.25rem;
+    margin-left: 0.25rem;
 }
 
 
@@ -571,6 +575,238 @@ a:hover {
 
 .card-link:hover {
     color: inherit;
+}
+
+.hover-shadow {
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+
+/* ============================================
+   Featured Showcase (Civic Minded gallery)
+   ============================================ */
+
+.featured-showcase {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.featured-showcase-header {
+    margin-bottom: 1.5rem;
+}
+
+.featured-showcase .project-title {
+    margin-bottom: 0.5rem;
+}
+
+.featured-showcase .project-description {
+    margin-bottom: 0;
+}
+
+/* Gallery row */
+.showcase-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Individual thumbnail */
+.showcase-thumb {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid var(--border-light);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.showcase-thumb:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+/* Image wrapper with fade */
+.thumb-img-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 180px;
+}
+
+.thumb-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.showcase-thumb:hover .thumb-img-wrap img {
+    transform: scale(1.03);
+}
+
+.thumb-img-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(transparent, rgba(255, 255, 255, 0.9));
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Label always visible */
+.thumb-label {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--bg-white);
+    text-align: center;
+}
+
+/* Hover overlay */
+.thumb-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(74, 124, 89, 0.92);
+    color: white;
+    padding: 0.75rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.showcase-thumb:hover .thumb-overlay {
+    transform: translateY(0);
+}
+
+.thumb-overlay p {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Behind the scenes */
+.behind-scenes {
+    margin-bottom: 1.5rem;
+    border-top: 1px solid var(--border-light);
+    padding-top: 1rem;
+}
+
+.behind-scenes-toggle {
+    background: none;
+    border: none;
+    color: var(--green-primary);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: color 0.2s ease;
+}
+
+.behind-scenes-toggle:hover {
+    color: var(--green-dark);
+}
+
+.toggle-icon {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    font-size: 0.85rem;
+}
+
+.behind-scenes.open .toggle-icon {
+    transform: rotate(90deg);
+}
+
+.behind-scenes-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0;
+}
+
+.behind-scenes.open .behind-scenes-content {
+    max-height: 200px;
+    padding-top: 0.75rem;
+}
+
+.behind-scenes-content p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Showcase footer */
+.showcase-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Showcase modal */
+.showcase-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.showcase-modal.active {
+    display: flex;
+}
+
+.showcase-modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.showcase-modal-content img {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 6px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.showcase-modal-close {
+    position: absolute;
+    top: -2rem;
+    right: -0.5rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
 }
 
 
@@ -701,6 +937,20 @@ footer {
     /* Services */
     .service-item {
         margin-bottom: 1rem;
+    }
+
+    /* Showcase gallery */
+    .showcase-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .thumb-img-wrap {
+        height: 200px;
+    }
+
+    .showcase-footer {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
